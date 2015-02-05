@@ -1,0 +1,61 @@
+body{
+    max-width: 100%;
+    height: auto;
+}
+
+h1{
+    font-size: 3em;
+    text-align: center;
+}
+
+form{
+    display: block;
+    margin-left: 20px;
+}
+
+input[type=radio]{
+    font-size: 3em;
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+}
+
+a{
+    cursor: pointer;
+}
+
+.quiz{
+    margin: 20px;
+}
+
+.question{
+    margin-bottom: 40px;
+}
+
+.option{
+    display: block;
+}
+
+.results{
+    text-align: center;
+}
+
+.results img{
+    display: block;
+    margin: auto;
+}
+
+.results a{
+    display: block;
+    margin: 25px;
+}
+
+input[type=submit] {
+    padding: 5px;
+    background:#e74c3c;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 2em;
+}
