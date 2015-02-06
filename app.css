@@ -18,16 +18,27 @@ input[type=radio] {
     text-align: left;
     margin: 10px;
     padding: 10px;
+    /*display: none;*/
+}
+
+input[type=radio]:checked+label {
+    background: yellow;
 }
 
 input[type=submit] {
     padding: 5px;
-    background:#e74c3c;
-    border:0 none;
+    background: white;
+    border:1px solid;
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    font-size: 2em;
+    font-size: 1.5em;
+    font-family: inherit;
+}
+
+input[type=submit]:hover{
+    background: black;
+    color: white;
 }
 
 a {
