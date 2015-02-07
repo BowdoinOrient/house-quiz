@@ -46,6 +46,7 @@ $(document).ready(function() {
 
     var reset = function(event){
         $('.results').hide();
+        $('.quiz')[0].reset();
         $('.quiz').show();
     };
     
