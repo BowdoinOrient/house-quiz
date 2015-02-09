@@ -46,6 +46,7 @@ $(document).ready(function() {
 
     var reset = function(event){
         $('.results').hide();
+        $('.quiz')[0].reset();
         $('.quiz').show();
     };
     
@@ -53,4 +54,6 @@ $(document).ready(function() {
     $('.quiz').on("submit", process_form);
     $('.reset').click(reset);
     $('.results').hide();
+    // image shouldn't be bigger than the screen
+    $('.results img').css("max-width", $(window).width());
 });
