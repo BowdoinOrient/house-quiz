@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var process_form = function(event){
         event.preventDefault();
-        $('.quiz').hide();
+        // $('.quiz').hide();
         // $('.quiz').slideUp("fast", function() {});
 
         var scores = [0, 0, 0, 0, 0, 0, 0 ,0]
@@ -40,18 +40,38 @@ $(document).ready(function() {
             imageURL += house + ".jpg"
         }; 
 
+        console.log(scores);
+
         $('.results img')[0].src = imageURL;
         $('.results').show();
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
     };
 
     var reset = function(event){
         $('.results').hide();
         $('.quiz')[0].reset();
-        $('.quiz').show();
+        $("html, body").animate({ scrollTop: 0}, "slow");
     };
     
-    // Initial setup
+
+
+    // ~ Initial setup ~
+
     $('.quiz').on("submit", process_form);
+
+    // Allow only one checkbox to be selected at a time
+    $("input:checkbox").on('click', function() {
+        var $box = $(this);
+        if ($box.is(":checked")) {
+            var group = "input:checkbox[name='" + $box.attr("name") + "']";
+            $(group).prop("checked", false);
+            $box.prop("checked", true);
+        } else {
+            $box.prop("checked", false);
+        }
+    });
+
+    // Results setup
     $('.reset').click(reset);
     $('.results').hide();
     // image shouldn't be bigger than the screen
