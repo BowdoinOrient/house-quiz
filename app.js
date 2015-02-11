@@ -4,10 +4,13 @@ $(document).ready(function() {
         // $('.quiz').hide();
         // $('.quiz').slideUp("fast", function() {});
 
-        var scores = [0, 0, 0, 0, 0, 0, 0 ,0]
+        var scores = [0, 0, 0, 0, 0, 0, 0 ,0];
+        var num_answered = 0;
 
         $('.option input').each(function(){
             if (this.checked) {
+                num_answered++;
+
                 if(this.value.indexOf("ba") >= 0){
                     scores[0]++;
                 }
@@ -35,10 +38,9 @@ $(document).ready(function() {
             };
         });
 
-        var answered = scores.reduce(function(a, b) { return a + b });
-        console.log("answer: "+answered);
+        console.log("answered: "+num_answered);
 
-        if(answered < 10){
+        if(num_answered < 10){
             $('#incomplete').show();
         } else {
             $('#incomplete').hide();
