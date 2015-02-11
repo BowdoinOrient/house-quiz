@@ -28,23 +28,31 @@ $(document).ready(function() {
             };
         });
 
-        var houses = ["Baxter", "Reed", "Ladd", "Howell", "MacMillan", "Helmreich", "Burnett", "Quinby"];
-        var i = scores.indexOf(Math.max.apply(Math, scores));
-        var house = houses[i];
-        $('.house').text(house + " House");
+        var answered = scores.reduce(function(a, b) { return a + b });
+        console.log("answer: "+answered);
 
-        var imageURL = "http://www.bowdoin.edu/reslife/images/"
-        if (house == "Burnett") {
-            imageURL += house + "1.jpg"
-        } else{
-            imageURL += house + ".jpg"
-        }; 
+        if(answered < 10){
+            $('#incomplete').show();
+        } else {
+            $('#incomplete').hide();
+            var houses = ["Baxter", "Reed", "Ladd", "Howell", "MacMillan", "Helmreich", "Burnett", "Quinby"];
+            var i = scores.indexOf(Math.max.apply(Math, scores));
+            var house = houses[i];
+            $('.house').text(house + " House");
 
-        console.log(scores);
+            var imageURL = "http://www.bowdoin.edu/reslife/images/"
+            if (house == "Burnett") {
+                imageURL += house + "1.jpg"
+            } else{
+                imageURL += house + ".jpg"
+            }; 
 
-        $('.results img')[0].src = imageURL;
-        $('.results').show();
-        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+            console.log(scores);
+
+            $('.results img')[0].src = imageURL;
+            $('.results').show();
+            $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        }
     };
 
     var reset = function(event){
