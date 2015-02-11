@@ -10,19 +10,26 @@ $(document).ready(function() {
             if (this.checked) {
                 if(this.value.indexOf("ba") >= 0){
                     scores[0]++;
-                } else if(this.value.indexOf("r") >= 0) {
+                }
+                if(this.value.indexOf("r") >= 0) {
                     scores[1]++;
-                } else if(this.value.indexOf("l") >= 0) {
+                }
+                if(this.value.indexOf("l") >= 0) {
                     scores[2]++;
-                } else if(this.value.indexOf("ho") >= 0) {
+                }
+                if(this.value.indexOf("ho") >= 0) {
                     scores[3]++;
-                } else if(this.value.indexOf("m") >= 0) {
+                }
+                if(this.value.indexOf("m") >= 0) {
                     scores[4]++;
-                } else if(this.value.indexOf("he") >= 0) {
+                }
+                if(this.value.indexOf("he") >= 0) {
                     scores[5]++;
-                } else if(this.value.indexOf("bu") >= 0) {
+                }
+                if(this.value.indexOf("bu") >= 0) {
                     scores[6]++;
-                } else if(this.value.indexOf("q") >= 0) {
+                }
+                if(this.value.indexOf("q") >= 0) {
                     scores[7]++;
                 }
             };
