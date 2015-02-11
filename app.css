@@ -71,3 +71,9 @@ a {
     display: block;
     margin: auto;
 }
+
+.error{
+    color: red;
+    display: none;
+    margin-top: 10px;
+}
