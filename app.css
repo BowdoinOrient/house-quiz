@@ -3,6 +3,10 @@ body {
     height: auto;
 }
 
+header {
+    text-align: center;
+}
+
 h1 {
     font-size: 3em;
     text-align: center;
@@ -50,8 +54,19 @@ a {
     cursor: pointer;
 }
 
+.subtitle {
+    width: 60%;
+    margin: auto;
+}
+
+@media all and (min-width: 961px) {
+    .subtitle {
+        width: 600px;
+    }
+}
+
 .quiz {
-    margin: 20px;
+    margin: 30px;
 }
 
 .question {
