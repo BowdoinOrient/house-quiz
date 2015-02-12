@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quiz!</title>
+    <title>College House Quiz &mdash; The Bowdoin Orient</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="favicon.ico" />
 
     <link rel="stylesheet" type="text/css" href="app.css">
     <link rel="stylesheet" type="text/css" href="http://bowdoinorient.com/css/orient.css?v=3">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="app.js" ></script>
+
+    <!-- Not sure if this will work off bowdoinorient.com but can't hurt -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18441903-3']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    
+    </script>
+    <!-- End Google Analytics -->
 </head>
 <body>
 <header>
 <h1 id="wordmark" style="position: relative"><a href="http://bowdoinorient.com/">The Bowdoin Orient</a></h1>
 <h3  style="text-align: center">presents</h3>
 <h1>Which College House Are You?</h1>
-<p class="subtitle">Whether you are a first year applying to a College House, a former House resident, or anyone in between, take this quiz to find out which house the Orient sorting hat might suggest is right for you.</p>
+<p class="subtitle">Whether you are a first year applying to a College House, a former House resident, or anyone in between, take this quiz to find out which House the Orient sorting hat suggests is right for you.</p>
 
 <hr style="width:50%; height: 1px; margin: 40px auto;">
 </header>
@@ -114,7 +133,7 @@
     </div>
 
     <div class="question">
-        <h4>Favorite Social Media?</h4>
+        <h4>Favorite social media?</h4>
         <div class="option">
             <input type="checkbox" id="25" name="question-5" value="m bu">
             <label for="25">Facebook</label>
@@ -232,8 +251,8 @@
             <label for="60">R u up?</label>
         </div>
     </div>
-    <input type="submit" value="Submit">
     <p class="error" id="incomplete">Make sure to select a response for each question!</p>
+    <input type="submit" value="Submit">
 </form>
 
 <div class="results">
