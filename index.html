@@ -1,267 +1,149 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>College House Quiz &mdash; The Bowdoin Orient</title>
+    <title>2016 Housing Quiz &mdash; The Bowdoin Orient</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="favicon.ico" />
 
     <link rel="stylesheet" type="text/css" href="app.css">
-    <link rel="stylesheet" type="text/css" href="http://bowdoinorient.com/css/orient.css?v=3">
+    <link rel="stylesheet" type="text/css" href="sweetalert.css">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="app.js" ></script>
-
-    <!-- Not sure if this will work off bowdoinorient.com but can't hurt -->
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-    
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-18441903-3']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    
-    </script>
-    <!-- End Google Analytics -->
+    <script type="text/javascript" src="sweetalert.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </head>
+
 <body>
-<header>
-<h1 id="wordmark" style="position: relative"><a href="http://bowdoinorient.com/">The Bowdoin Orient</a></h1>
-<h3  style="text-align: center">presents</h3>
-<h1>Which College House Are You?</h1>
-<p class="subtitle">Whether you are a first year applying to a College House, a former House resident, or anyone in between, take this quiz to find out which House the Orient sorting hat suggests is right for you.</p>
+    <header>
+        <!-- Replace with Orient SVG wordmark -->
+        <h1>2016 Bowdoin Housing Lottery Quiz</h1>
+    </header>
 
-<hr style="width:50%; height: 1px; margin: 40px auto;">
-</header>
-<form class="quiz">    
-    <div class="question">
-        <h4>Where would you be sorted?</h4>
-        <div class="option">
-            <input type="checkbox" id="1"  name="question-1" value="m q">
-            <label for="1">Gryffindor</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="2" name="question-1" value="bu he">
-            <label for="2">Hufflepuff</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="3" name="question-1" value="ba l">
-            <label for="3">Slytherin</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="4" name="question-1" value="ho r">
-            <label for="4">Ravenclaw</label>
-        </div>
-    </div>
+    <main>
+        <div class="year-buttons">
+            <p class="instructions">First, choose your class year.</p>
 
-    <div class="question">
-        <h4>Favorite dining hall?</h4>
-        <div class="option">
-            <input type="checkbox" id="7"  name="question-2" value="r q bu ho">
-            <label for="7">Moulton</label>
+            <div class="year-buttons-wrap">
+                <button class="year-button 2017" id="2017-button">2017</button>
+                <button class="year-button 2018" id="2018-button">2018</button>
+                <button class="year-button 2019" id="2019-button">2019</button>
+            </div>
         </div>
-        <div class="option">
-            <input type="checkbox" id="8" name="question-2" value="m he ba l">
-            <label for="8">Thorne</label>
-        </div>
-    </div>
 
-    <div class="question">
-        <h4>Favorite dining hall soup?</h4>
-        <div class="option">
-            <input type="checkbox" id="13" name="question-3" value="m">
-            <label for="13">Curried Carrot</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="14" name="question-3" value="bu">
-            <label for="14">Potato Leek</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="15" name="question-3" value="q">
-            <label for="15">Silky Cauliflower</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="16" name="question-3" value="r">
-            <label for="16">Roasted Squash and Apple</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="17" name="question-3" value="ba">
-            <label for="17">Chicken Tortilla</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="18" name="question-3" value="he">
-            <label for="18">Corn Chowder</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="19" name="question-3" value="l">
-            <label for="19">Hungarian Mushroom</label>
-        </div>
-    </div>
+        <div class="questions">
+            <p class="instructions">Words words words</p>
 
-    <div class="question">
-        <h4>Favorite sports team?</h4>
-        <div class="option">
-            <input type="checkbox" id="20" name="question-4" value="r">
-            <label for="20">Frisbee</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="21" name="question-4" value="ba l">
-            <label for="21">Lacrosse</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="22" name="question-4" value="bu m">
-            <label for="22">Rugby</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="23" name="question-4" value="he">
-            <label for="23">Football</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="24" name="question-4" value="q">
-            <label for="24">Sailing</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="125" name="question-4" value="ho">
-            <label for="125">Crew</label>
-        </div>
-    </div>
+            <div class="questions-wrap">
+                <form action="#">
+                    <div class="question">
+                        <p class="form-guide">Being in a building with mostly people in your class.</p>
+                        <div class="options">
+                            <label for="1-vi"><input type="radio" id="1-vi" name="1" value="vi">Very important</label>
+                            <label for="1-si"><input type="radio" id="1-si" name="1" value="si">Somewhat important</label>
+                            <label for="1-ne"><input type="radio" id="1-ne" name="1" value="ne">Neutral</label>
+                            <label for="1-su"><input type="radio" id="1-su" name="1" value="su">Somewhat unimportant</label>
+                            <label for="1-vu"><input type="radio" id="1-vu" name="1" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
 
-    <div class="question">
-        <h4>Favorite social media?</h4>
-        <div class="option">
-            <input type="checkbox" id="25" name="question-5" value="m bu">
-            <label for="25">Facebook</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="26" name="question-5" value="r">
-            <label for="26">Instagram</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="27" name="question-5" value="q he">
-            <label for="27">Twitter</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="28" name="question-5" value="l">
-            <label for="28">Yik Yak</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="29" name="question-5" value="ho">
-            <label for="29">LinkedIn</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="30" name="question-5" value="ba">
-            <label for="30">Tinder</label>
-        </div>
-    </div>
+                    <div class="question">
+                        <p class="form-guide">Having your bathroom cleaned.</p>
+                        <div class="options">
+                            <label for="2-vi"><input type="radio" id="2-vi" name="2" value="vi">Very important</label>
+                            <label for="2-si"><input type="radio" id="2-si" name="2" value="si">Somewhat important</label>
+                            <label for="2-ne"><input type="radio" id="2-ne" name="2" value="ne">Neutral</label>
+                            <label for="2-su"><input type="radio" id="2-su" name="2" value="su">Somewhat unimportant</label>
+                            <label for="2-vu"><input type="radio" id="2-vu" name="2" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
 
-        <div class="question">
-        <h4>Would you rather wear bean boots or crack shoes?</h4>
-        <div class="option">
-            <input type="checkbox" id="31"  name="question-6" value="r ho bu l">
-            <label for="31">Bean Boots</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="32" name="question-6" value="m ba l he">
-            <label for="32">Crack Shoes</label>
-        </div>
-    </div>
+                    <div class="question">
+                        <p class="form-guide">Having a kitchen.</p>
+                        <div class="options">
+                            <label for="3-vi"><input type="radio" id="3-vi" name="3" value="vi">Very important</label>
+                            <label for="3-si"><input type="radio" id="3-si" name="3" value="si">Somewhat important</label>
+                            <label for="3-ne"><input type="radio" id="3-ne" name="3" value="ne">Neutral</label>
+                            <label for="3-su"><input type="radio" id="3-su" name="3" value="su">Somewhat unimportant</label>
+                            <label for="3-vu"><input type="radio" id="3-vu" name="3" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
 
-    <div class="question">
-        <h4>What kind of jacket do you own?</h4>
-        <div class="option">
-            <input type="checkbox" id="37"  name="question-7" value="ba l">
-            <label for="37">Canada Goose</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="38" name="question-7" value="ho bu">
-            <label for="38">L.L.Bean</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="39" name="question-7" value="r">
-            <label for="39">Thrift shop find</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="40" name="question-7" value="m q he">
-            <label for="40">Patagucci</label>
-        </div>
-    </div>
+                    <div class="question">
+                        <p class="form-guide">Having parking with your building.</p>
+                        <div class="options">
+                            <label for="4-vi"><input type="radio" id="4-vi" name="4" value="vi">Very important</label>
+                            <label for="4-si"><input type="radio" id="4-si" name="4" value="si">Somewhat important</label>
+                            <label for="4-ne"><input type="radio" id="4-ne" name="4" value="ne">Neutral</label>
+                            <label for="4-su"><input type="radio" id="4-su" name="4" value="su">Somewhat unimportant</label>
+                            <label for="4-vu"><input type="radio" id="4-vu" name="4" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
 
-    <div class="question">
-        <h4>What's your favorite study spot on campus?</h4>
-        <div class="option">
-            <input type="checkbox" id="43" name="question-8" value="q he">
-            <label for="43">H&amp;L First Floor and Basement</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="44" name="question-8" value="m r">
-            <label for="44">The Union</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="45" name="question-8" value="bu ho">
-            <label for="45">Hatch</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="46" name="question-8" value="ba l">
-            <label for="46">Your bed</label>
-        </div>
-    </div>
+                    <div class="question">
+                        <p class="form-guide">Having a quiet living community.</p>
+                        <div class="options">
+                            <label for="5-vi"><input type="radio" id="5-vi" name="5" value="vi">Very important</label>
+                            <label for="5-si"><input type="radio" id="5-si" name="5" value="si">Somewhat important</label>
+                            <label for="5-ne"><input type="radio" id="5-ne" name="5" value="ne">Neutral</label>
+                            <label for="5-su"><input type="radio" id="5-su" name="5" value="su">Somewhat unimportant</label>
+                            <label for="5-vu"><input type="radio" id="5-vu" name="5" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
 
-    <div class="question">
-        <h4>Favorite restaurant in town?</h4>
-        <div class="option">
-            <input type="checkbox" id="49" name="question-9" value="r q">
-            <label for="49">Shere Punjab</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="50" name="question-9" value="ba l">
-            <label for="50">Little Tokyo</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="51" name="question-9" value="m he">
-            <label for="51">Frontier</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="52" name="question-9" value="ho bu">
-            <label for="52">Gelato Fiasco</label>
-        </div>
-    </div>
+                    <div class="question">
+                        <p class="form-guide">Having a short walk to classes or to campus.</p>
+                        <div class="options">
+                            <label for="6-vi"><input type="radio" id="6-vi" name="6" value="vi">Very important</label>
+                            <label for="6-si"><input type="radio" id="6-si" name="6" value="si">Somewhat important</label>
+                            <label for="6-ne"><input type="radio" id="6-ne" name="6" value="ne">Neutral</label>
+                            <label for="6-su"><input type="radio" id="6-su" name="6" value="su">Somewhat unimportant</label>
+                            <label for="6-vu"><input type="radio" id="6-vu" name="6" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
 
-    <div class="question">
-        <h4>What's your catchphrase?</h4>
-        <div class="option">
-            <input type="checkbox" id="57" name="question-10" value="ho he">
-            <label for="57">#GoUBears</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="58" name="question-10" value="bu r">
-            <label for="58">Turn up!</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="59" name="question-10" value="ba m">
-            <label for="59">YOLO</label>
-        </div>
-        <div class="option">
-            <input type="checkbox" id="60" name="question-10" value="q l">
-            <label for="60">R u up?</label>
-        </div>
-    </div>
-    <p class="error" id="incomplete">Make sure to select a response for each question!</p>
-    <input type="submit" value="Submit">
-</form>
+                    <div class="question">
+                        <p class="form-guide">Having laundry in your building.</p>
+                        <div class="options">
+                            <label for="7-vi"><input type="radio" id="7-vi" name="7" value="vi">Very important</label>
+                            <label for="7-si"><input type="radio" id="7-si" name="7" value="si">Somewhat important</label>
+                            <label for="7-ne"><input type="radio" id="7-ne" name="7" value="ne">Neutral</label>
+                            <label for="7-su"><input type="radio" id="7-su" name="7" value="su">Somewhat unimportant</label>
+                            <label for="7-vu"><input type="radio" id="7-vu" name="7" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
 
-<div class="results">
-    <h1 class="house"></h1>
-    <img src="">
-    <!-- <br> -->
-    <a class="reset">Retake the quiz</a>
-</div>
-<a name="results"></a>
+                    <div class="question">
+                        <p class="form-guide">Having a chem-free living community.</p>
+                        <div class="options">
+                            <label for="8-vi"><input type="radio" id="8-vi" name="8" value="vi">Very important</label>
+                            <label for="8-si"><input type="radio" id="8-si" name="8" value="si">Somewhat important</label>
+                            <label for="8-ne"><input type="radio" id="8-ne" name="8" value="ne">Neutral</label>
+                            <label for="8-su"><input type="radio" id="8-su" name="8" value="su">Somewhat unimportant</label>
+                            <label for="8-vu"><input type="radio" id="8-vu" name="8" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
 
+                    <div class="question">
+                        <p class="form-guide">Being close to athletic facilities.</p>
+                        <div class="options">
+                            <label for="9-vi"><input type="radio" id="9-vi" name="9" value="vi">Very important</label>
+                            <label for="9-si"><input type="radio" id="9-si" name="9" value="si">Somewhat important</label>
+                            <label for="9-ne"><input type="radio" id="9-ne" name="9" value="ne">Neutral</label>
+                            <label for="9-su"><input type="radio" id="9-su" name="9" value="su">Somewhat unimportant</label>
+                            <label for="9-vu"><input type="radio" id="9-vu" name="9" value="vu">Very unimportant</label>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
