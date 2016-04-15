@@ -1,94 +1,166 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:700);
+
+*, *:before, *:after {
+    position: relative;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
 body {
-    max-width: 100%;
-    height: auto;
+    font-family: Open Sans, sans-serif;
+    padding: 0.3rem 1rem;
+    color: #222;
+    margin-bottom: 5rem;
 }
 
 header {
-    text-align: center;
+    border-bottom: 1px solid #D3D3D3;
+    margin-bottom: 2rem;
 }
 
-h1 {
-    font-size: 3em;
-    text-align: center;
+.super {
+    border-bottom: 2px solid #808080;
+    margin-bottom: 0.5rem;
 }
 
-form {
+.header__wordmark {
     display: block;
-    margin-left: 20px;
+    width: 275px;
 }
 
-input[type=radio] {
-    font-size: 3em;
-    text-align: left;
-    margin: 10px;
-    padding: 10px;
-}
-
-input[type=radio]:checked+label {
-}
-
-label{
-    font-size: 1.25em;
-    cursor: pointer;
-}
-
-input[type=submit] {
-    padding: 5px;
-    background: white;
-    border:1px solid;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    font-size: 1.5em;
-    font-family: inherit;
-}
-
-input[type=submit]:hover{
-    background: black;
-    color: white;
-}
-
-a {
+.header__back-link {
+    color: #00008B;
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-bottom: 0.2rem;
     display: block;
-    margin: 25px;
-    cursor: pointer;
 }
 
-.subtitle {
-    width: 60%;
-    margin: auto;
+.header__back-link:hover {
+    text-decoration: underline;
 }
 
-@media all and (min-width: 961px) {
-    .subtitle {
-        width: 600px;
-    }
+
+
+.title {
+    font-weight: 700;
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+    /*margin-bottom: 1rem;*/
 }
 
-.quiz {
-    margin: 30px;
+.instructions {
+    margin-top: 5rem;
+    margin-bottom: 0.5rem;
+    font-size: 2em;
+}
+
+.year-buttons-wrap {
+    /*border: 1px solid black;*/
+    display: flex;
+}
+
+.year-button {
+    background: none;
+    border: none;
+    width: 33.33%;
+    transition: width 0.4s ease-out, background 0.4s ease-out;
+    font-size: 2rem;
+    background: #EEE;
+    border: 1px solid #333;
+    border-right-width: 0px;
+    font-weight: lighter;
+}
+
+.yb-2019 {
+    border-right-width: 1px;
+}
+
+.year-button:active {
+    color: black;
+}
+
+.year-button-selected {
+    width: 80%;
+}
+
+
+
+
+
+
+
+/*button {
+    border: none;
+    display: inline-block;
+    padding: 0.5em 0.8em;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px hsla(0, 0%, 0%, 0.5);
+}
+
+button:active {
+    color: black;
+    top: 1px;
+    left: 1px;
+    box-shadow: 1px 1px 1px hsla(0, 0%, 0%, 0.5);
+}*/
+
+.year-button-selected {
+    background: #7FDBFF;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 55rem) {
+  .options {
+      display: block;
+  }
+
+  .label {
+      display: block;
+  }
 }
 
 .question {
-    margin-bottom: 40px;
+    margin-top: 2rem;
 }
 
-.option {
-    display: block;
-    margin-top: 20px;
+.form-guide {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
 }
 
-.results {
+label {
     text-align: center;
-}
-
-.results img {
     display: block;
-    margin: auto;
+    margin-bottom: 1em;
+
 }
 
-.error{
-    color: red;
+input[type="radio"] {
     display: none;
-    margin-top: 10px;
+}
+
+label {
+    border: 2px solid #888;
+    border-radius: 8px;
+    padding: 0.7em 1.1em
+}
+
+input[type="radio"]:checked + label {
+    border-color: #2196F3;
+    background: #4FC3F7;
+}
+
+.form-buttons {
+    position: fixed;
+    bottom: 1em;
 }
